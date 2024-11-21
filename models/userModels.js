@@ -11,10 +11,17 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    tasks: {
-        type: Object,
-        default: [taskModel]
-    },
+    // tasks: {
+    //     type: Object,
+    //     default: [taskModel]
+        
+    // },
+    tasks: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'tasks',  // Reference to Task model
+        default: [],
+      }],
+  
     categories: {
         type: Object,
         default: categories
