@@ -5,6 +5,10 @@ const userModel = require("../models/userModels");
 const taskModel = require("../models/taskModel");
 
 
+const welcome = async (req, res) => {
+   res.status(200).json({ message: "welcome to taskma app server" })
+}
+
 const signUp = async (req, res) => {
     const data = {
         email: req.body.email,
@@ -182,5 +186,6 @@ const getTask = async (req, res) => {
     }
 }
 
-module.exports = { signUp, login, addTask, 
+module.exports = { welcome, 
+    signUp, login, addTask, 
     getUser, getAllTask, getTask }
